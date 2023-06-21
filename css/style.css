@@ -17,25 +17,25 @@ body {
 
   /* Primitive tokens */
   /* sea #000082 */
-  --color-sea-900: hsla(240deg, 100%, 25%, 100%);
+  --color-sea-900: hsla(240, 100%, 25%, 100%);
   /* sea #0017C1 */
-  --color-sea-800: hsla(233deg, 100%, 38%, 100%);
+  --color-sea-800: hsla(233, 100%, 38%, 100%);
   /* sea #0031D8 */
-  --color-sea-700: hsla(226deg, 100%, 42%, 100%);
+  --color-sea-700: hsla(226, 100%, 42%, 100%);
   /* sea #1A3EE8 */
-  --color-sea-600: hsla(230deg, 82%, 51%, 100%);
+  --color-sea-600: hsla(230, 82%, 51%, 100%);
   /* sea #264AF4 */
-  --color-sea-500: hsla(230deg, 90%, 55%, 100%);
+  --color-sea-500: hsla(230, 90%, 55%, 100%);
   /* sea #4979F5 */
-  --color-sea-400: hsla(223deg, 90%, 62%, 100%);
+  --color-sea-400: hsla(223, 90%, 62%, 100%);
   /* sea #7096F8 */
-  --color-sea-300: hsla(223deg, 91%, 71%, 100%);
+  --color-sea-300: hsla(223, 91%, 71%, 100%);
   /* sea #9DB7F9 */
-  --color-sea-200: hsla(223deg, 88%, 80%, 100%);
+  --color-sea-200: hsla(223, 88%, 80%, 100%);
   /* sea #C5D7FB */
-  --color-sea-100: hsla(220deg, 87%, 88%, 100%);
+  --color-sea-100: hsla(220, 87%, 88%, 100%);
   /* sea #E8F1FE */
-  --color-sea-050: hsla(215deg, 92%, 95%, 100%);
+  --color-sea-050: hsla(215, 92%, 95%, 100%);
 
   /* sumi #1A1A1C */
   --color-sumi-900:  hsla(240, 4%, 11%, 100%);
@@ -59,25 +59,25 @@ body {
   --color-sumi-050: hsla(240, 27%, 98%, 100%);
 
   /* forest #115A36 */
-  --color-forest-900: hsla(150deg, 68%, 21%, 100%);
+  --color-forest-900: hsla(150, 68%, 21%, 100%);
   /* forest #197A4B */
-  --color-forest-800 : hsla(151deg, 66%, 29%, 100%);
+  --color-forest-800 : hsla(151, 66%, 29%, 100%);
   /* forest #1D8B56 */
-  --color-forest-700: hsla(151deg, 65%, 33%, 100%);
+  --color-forest-700: hsla(151, 65%, 33%, 100%);
   /* forest #259D63 */
-  --color-forest-600: hsla(151deg, 62%, 38%, 100%);
+  --color-forest-600: hsla(151, 62%, 38%, 100%);
   /* forest #2CAC6E */
-  --color-forest-500: hsla(151deg, 59%, 42%, 100%);
+  --color-forest-500: hsla(151, 59%, 42%, 100%);
   /* forest #51B883 */
-  --color-forest-400: hsla(149deg, 42%, 52%, 100%);
+  --color-forest-400: hsla(149, 42%, 52%, 100%);
   /* forest #71C598 */
-  --color-forest-300: hsla(148deg, 42%, 61%, 100%);
+  --color-forest-300: hsla(148, 42%, 61%, 100%);
   /* forest #9BD4B5 */
-  --color-forest-200: hsla(147deg, 40%, 72%, 100%);
+  --color-forest-200: hsla(147, 40%, 72%, 100%);
   /* forest #C2E5D1 */
-  --color-forest-100 : hsla(146deg, 40%, 83%, 100%);
+  --color-forest-100 : hsla(146, 40%, 83%, 100%);
   /* forest #E6F5EC */
-  --color-forest-050 : hsla(144deg, 43%, 93%, 100%);
+  --color-forest-050 : hsla(144, 43%, 93%, 100%);
 
   /* wood #B65200 */
   --color-wood-900: hsla(27, 100%, 36%, 100%);
