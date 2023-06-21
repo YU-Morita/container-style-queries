@@ -1,0 +1,342 @@
+@charset "utf-8";
+
+body {
+  max-width: 840px;
+  width: 100%;
+  font-family: system-ui;
+  box-sizing: border-box;
+  margin-block: 0;
+  margin-inline: auto;
+  padding: 10px;
+}
+
+:root {
+  /* color-scheme light mode */
+  --text: #333;
+  color-scheme: light;
+
+  /* Primitive tokens */
+  /* sea #000082 */
+  --color-sea-900: hsla(240deg, 100%, 25%, 100%);
+  /* sea #0017C1 */
+  --color-sea-800: hsla(233deg, 100%, 38%, 100%);
+  /* sea #0031D8 */
+  --color-sea-700: hsla(226deg, 100%, 42%, 100%);
+  /* sea #1A3EE8 */
+  --color-sea-600: hsla(230deg, 82%, 51%, 100%);
+  /* sea #264AF4 */
+  --color-sea-500: hsla(230deg, 90%, 55%, 100%);
+  /* sea #4979F5 */
+  --color-sea-400: hsla(223deg, 90%, 62%, 100%);
+  /* sea #7096F8 */
+  --color-sea-300: hsla(223deg, 91%, 71%, 100%);
+  /* sea #9DB7F9 */
+  --color-sea-200: hsla(223deg, 88%, 80%, 100%);
+  /* sea #C5D7FB */
+  --color-sea-100: hsla(220deg, 87%, 88%, 100%);
+  /* sea #E8F1FE */
+  --color-sea-050: hsla(215deg, 92%, 95%, 100%);
+
+  /* sumi #1A1A1C */
+  --color-sumi-900:  hsla(240, 4%, 11%, 100%);
+  /* sumi #414143 */
+  --color-sumi-800:  hsla(240, 2%, 26%, 100%);
+  /* sumi #626264 */
+  --color-sumi-700:  hsla(240, 1%, 39%, 100%);
+  /* sumi #757578 */
+  --color-sumi-600:  hsla(240, 1%, 46%, 100%);
+  /* sumi #949497 */
+  --color-sumi-500:  hsla(240, 1%, 59%, 100%);
+  /* sumi #B4B4B7 */
+  --color-sumi-400:  hsla(240, 2%, 71%, 100%);
+  /* sumi #D8D8DB */
+  --color-sumi-300:  hsla(240, 4%, 85%, 100%);
+  /* sumi #E8E8EB */
+  --color-sumi-200:  hsla(240, 7%, 92%, 100%);
+  /* sumi #F1F1F4 */
+  --color-sumi-100:  hsla(240, 12%, 95%, 100%);
+  /* sumi #F8F8FB */
+  --color-sumi-050: hsla(240, 27%, 98%, 100%);
+
+  /* forest #115A36 */
+  --color-forest-900: hsla(150deg, 68%, 21%, 100%);
+  /* forest #197A4B */
+  --color-forest-800 : hsla(151deg, 66%, 29%, 100%);
+  /* forest #1D8B56 */
+  --color-forest-700: hsla(151deg, 65%, 33%, 100%);
+  /* forest #259D63 */
+  --color-forest-600: hsla(151deg, 62%, 38%, 100%);
+  /* forest #2CAC6E */
+  --color-forest-500: hsla(151deg, 59%, 42%, 100%);
+  /* forest #51B883 */
+  --color-forest-400: hsla(149deg, 42%, 52%, 100%);
+  /* forest #71C598 */
+  --color-forest-300: hsla(148deg, 42%, 61%, 100%);
+  /* forest #9BD4B5 */
+  --color-forest-200: hsla(147deg, 40%, 72%, 100%);
+  /* forest #C2E5D1 */
+  --color-forest-100 : hsla(146deg, 40%, 83%, 100%);
+  /* forest #E6F5EC */
+  --color-forest-050 : hsla(144deg, 43%, 93%, 100%);
+
+  /* wood #B65200 */
+  --color-wood-900: hsla(27, 100%, 36%, 100%);
+  /* wood #C16800 */
+  --color-wood-800: hsla(32, 100%, 38%, 100%);
+  /* wood #C87504 */
+  --color-wood-700: hsla(35, 96%, 40%, 100%);
+  /* wood #CD820A */
+  --color-wood-600: hsla(37, 91%, 42%, 100%);
+  /* wood #D18D0F */
+  --color-wood-500: hsla(39, 87%, 44%, 100%);
+  /* wood #D69C2B */
+  --color-wood-400: hsla(40, 68%, 50%, 100%);
+  /* wood #DCAC4D */
+  --color-wood-300: hsla(40, 67%, 58%, 100%);
+  /* wood #E1C383 */
+  --color-wood-200: hsla(41, 61%, 70%, 100%);
+  /* wood #E7D8B9 */
+  --color-wood-100: hsla(40, 49%, 82%, 100%);
+  /* wood #F3EEE5 */
+  --color-wood-050: hsla(39, 37%, 93%, 100%);
+
+  /* sun #D50000 */
+  --color-sun-900: hsla(0, 100%, 42%, 100%);
+  /* sun #EC0000 */
+  --color-sun-800: hsla(0, 100%, 46%, 100%);
+  /* sun #FA1606 */
+  --color-sun-700: hsla(4, 96%, 50%, 100%);
+  /* sun #FF220D */
+  --color-sun-600: hsla(5, 100%, 53%, 100%);
+  /* sun #FF4B36 */
+  --color-sun-500: hsla(6, 100%, 61%, 100%);
+  /* sun #FF5838 */
+  --color-sun-400: hsla(10, 100%, 61%, 100%);
+  /* sun #FF7B5C */
+  --color-sun-300: hsla(11, 100%, 68%, 100%);
+  /* sun #FFA28B */
+  --color-sun-200: hsla(12, 100%, 77%, 100%);
+  /* sun #FFC8B8 */
+  --color-sun-100: hsla(14, 100%, 86%, 100%);
+  /* sun #FFE7E6 */
+  --color-sun-050: hsla(2, 100%, 95%, 100%);
+}
+
+/* color-scheme dark mode */
+.dark {
+  --text: #ddd;
+  color-scheme: dark;
+}
+
+.theme-picker {
+  width: 100%;
+  margin-block-start: 24px;
+}
+.theme-picker-inner {
+  padding-inline: 10px;
+  padding-block-end: 10px;
+}
+.theme-picker-title {
+  font-weight: bold;
+  padding-inline: .5em;
+}
+.theme-picker-field {
+  margin-block-start: 8px;
+}
+.theme-picker-label {
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+.theme-picker-input {
+  font-weight: bold;
+  padding-block: .25em;
+  padding-inline: .5em;
+}
+.theme-picker-button {
+  padding-block: .25em;
+  padding-inline: .65em;
+  border-radius: 4px;
+}
+.theme-picker-button:hover,
+.theme-picker-button:focus {
+  /* 今まさに押せる状態になったとわかる見た目にする */
+}
+.theme-picker-button:active {
+  /* ボタンが実際に押されたように見せる */
+}
+
+.box-container {
+  width: 100%;
+  margin-block-start: 24px;
+}
+.box-item {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-block-start: 10px;
+}
+
+@container style(--theme: sea) {
+  .level-900 {
+    background: var(--color-sea-900);
+  }
+  .level-800 {
+    background: var(--color-sea-800);
+  }
+  .level-700 {
+    background: var(--color-sea-700);
+  }
+  .level-600 {
+    background: var(--color-sea-600);
+  }
+  .level-500 {
+    background: var(--color-sea-500);
+  }
+  .level-400 {
+    background: var(--color-sea-400);
+  }
+  .level-300 {
+    background: var(--color-sea-300);
+  }
+  .level-200 {
+    background: var(--color-sea-200);
+  }
+  .level-100  {
+    background: var(--color-sea-100);
+  }
+  .level-050  {
+    background: var(--color-sea-050);
+  }
+}
+
+@container style(--theme: sumi) {
+  .level-900 {
+    background: var(--color-sumi-900);
+  }
+  .level-800 {
+    background: var(--color-sumi-800);
+  }
+  .level-700 {
+    background: var(--color-sumi-700);
+  }
+  .level-600 {
+    background: var(--color-sumi-600);
+  }
+  .level-500 {
+    background: var(--color-sumi-500);
+  }
+  .level-400 {
+    background: var(--color-sumi-400);
+  }
+  .level-300 {
+    background: var(--color-sumi-300);
+  }
+  .level-200 {
+    background: var(--color-sumi-200);
+  }
+  .level-100  {
+    background: var(--color-sumi-100);
+  }
+  .level-050  {
+    background: var(--color-sumi-050);
+  }
+}
+
+@container style(--theme: forest) {
+  .level-900 {
+    background: var(--color-forest-900);
+  }
+  .level-800 {
+    background: var(--color-forest-800);
+  }
+  .level-700 {
+    background: var(--color-forest-700);
+  }
+  .level-600 {
+    background: var(--color-forest-600);
+  }
+  .level-500 {
+    background: var(--color-forest-500);
+  }
+  .level-400 {
+    background: var(--color-forest-400);
+  }
+  .level-300 {
+    background: var(--color-forest-300);
+  }
+  .level-200 {
+    background: var(--color-forest-200);
+  }
+  .level-100  {
+    background: var(--color-forest-100);
+  }
+  .level-050  {
+    background: var(--color-forest-050);
+  }
+}
+
+@container style(--theme: wood) {
+  .level-900 {
+    background: var(--color-wood-900);
+  }
+  .level-800 {
+    background: var(--color-wood-800);
+  }
+  .level-700 {
+    background: var(--color-wood-700);
+  }
+  .level-600 {
+    background: var(--color-wood-600);
+  }
+  .level-500 {
+    background: var(--color-wood-500);
+  }
+  .level-400 {
+    background: var(--color-wood-400);
+  }
+  .level-300 {
+    background: var(--color-wood-300);
+  }
+  .level-200 {
+    background: var(--color-wood-200);
+  }
+  .level-100  {
+    background: var(--color-wood-100);
+  }
+  .level-050  {
+    background: var(--color-wood-050);
+  }
+}
+
+@container style(--theme: sun) {
+  .level-900 {
+    background: var(--color-sun-900);
+  }
+  .level-800 {
+    background: var(--color-sun-800);
+  }
+  .level-700 {
+    background: var(--color-sun-700);
+  }
+  .level-600 {
+    background: var(--color-sun-600);
+  }
+  .level-500 {
+    background: var(--color-sun-500);
+  }
+  .level-400 {
+    background: var(--color-sun-400);
+  }
+  .level-300 {
+    background: var(--color-sun-300);
+  }
+  .level-200 {
+    background: var(--color-sun-200);
+  }
+  .level-100  {
+    background: var(--color-sun-100);
+  }
+  .level-050  {
+    background: var(--color-sun-050);
+  }
+}
