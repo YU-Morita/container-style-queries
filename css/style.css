@@ -4,6 +4,7 @@ body {
   max-width: 840px;
   width: 100%;
   font-family: system-ui;
+  position: relative;
   box-sizing: border-box;
   margin-block: 0;
   margin-inline: auto;
@@ -12,10 +13,13 @@ body {
 
 :root {
   /* color-scheme light mode */
-  --text: #333;
+  --text: var(--color-sumi-900);
   color-scheme: light;
 
   /* Primitive tokens */
+  --color-white-900: hsla(0, 100%, 100%, 100%);
+  --color-white-500: hsla(0, 100%, 100%, 50%);
+  
   /* sea #000082 */
   --color-sea-900: hsla(240, 100%, 25%, 100%);
   /* sea #0017C1 */
@@ -120,32 +124,73 @@ body {
   --color-sun-100: hsla(14, 100%, 86%, 100%);
   /* sun #FFE7E6 */
   --color-sun-050: hsla(2, 100%, 95%, 100%);
+
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
 }
 
 /* color-scheme dark mode */
 .dark {
-  --text: #ddd;
+  --text: var(--color-sumi-100);
   color-scheme: dark;
 }
 
 .theme-picker {
   width: 100%;
-  margin-block-start: 24px;
+  background: transparent;
+  margin-block-start: var(--spacing-24);
+  position: sticky;
+  top: var(--spacing-24);
 }
 .theme-picker-inner {
-  padding-inline: 10px;
-  padding-block-end: 10px;
+  background: var(--color-white-500);
+  padding-inline: var(--spacing-16);
+  padding-block-end: var(--spacing-16);
 }
 .theme-picker-title {
   font-weight: bold;
-  padding-inline: .5em;
+  padding: .5em;
+  background: transparent;
+  color: var(--color-sumi-800);
+}
+.dark {
+  & .theme-picker-title {
+    color: var(--color-white-900);
+  }
+  @container style(--theme: sea) {
+    & .theme-picker-title {
+      background: var(--color-sea-900);
+    }
+  }
+  @container style(--theme: sumi) {
+    & .theme-picker-title {
+      background: var(--color-sumi-900);
+    }
+  }
+  @container style(--theme: forest) {
+    & .theme-picker-title {
+      background: var(--color-forest-900);
+    }
+  }
+  @container style(--theme: wood) {
+    & .theme-picker-title {
+      background: var(--color-wood-900);
+    }
+  }
+  @container style(--theme: sun) {
+    & .theme-picker-title {
+      background: var(--color-sun-900);
+    }
+  }
 }
 .theme-picker-field {
-  margin-block-start: 8px;
+  margin-block-start: var(--spacing-8);
 }
 .theme-picker-label {
-  padding-block: 8px;
-  padding-inline: 16px;
+  padding-block: var(--spacing-16);
+  padding-inline: var(--spacing-16);
 }
 .theme-picker-input {
   font-weight: bold;
@@ -153,11 +198,31 @@ body {
   padding-inline: .5em;
 }
 .theme-picker-button {
+  margin-block-start: var(--spacing-16);
   padding-block: .25em;
   padding-inline: .65em;
   border-radius: 4px;
 }
-.theme-picker-button:hover,
+.theme-picker-note {
+  margin-block-start: var(--spacing-16);
+}
+.dark {
+  & .theme-picker-field,
+  & .theme-picker-label,
+  & .theme-picker-input,
+  & .theme-picker-note-item {
+    color: var(--color-sumi-900);
+  }
+  & .theme-picker-button {
+    color: var(--color-white-900);
+  }
+}
+
+@media (hover: hover) {
+  .theme-picker-button:hover {
+    /* 今まさに押せる状態になったとわかる見た目にする */
+  }
+}
 .theme-picker-button:focus {
   /* 今まさに押せる状態になったとわかる見た目にする */
 }
@@ -167,7 +232,7 @@ body {
 
 .box-container {
   width: 100%;
-  margin-block-start: 24px;
+  margin-block-start: var(--spacing-24);
 }
 .box-item {
   width: 100%;
@@ -178,165 +243,307 @@ body {
 
 @container style(--theme: sea) {
   .level-900 {
+    color: var(--color-sumi-100);
     background: var(--color-sea-900);
   }
   .level-800 {
+    color: var(--color-sumi-100);
     background: var(--color-sea-800);
   }
   .level-700 {
+    color: var(--color-sumi-100);
     background: var(--color-sea-700);
   }
   .level-600 {
+    color: var(--color-sumi-100);
     background: var(--color-sea-600);
   }
   .level-500 {
+    color: var(--color-sumi-100);
     background: var(--color-sea-500);
   }
   .level-400 {
+    color: var(--color-sumi-900);
     background: var(--color-sea-400);
   }
   .level-300 {
+    color: var(--color-sumi-900);
     background: var(--color-sea-300);
   }
   .level-200 {
+    color: var(--color-sumi-900);
     background: var(--color-sea-200);
   }
   .level-100  {
+    color: var(--color-sumi-900);
     background: var(--color-sea-100);
   }
   .level-050  {
+    color: var(--color-sumi-900);
     background: var(--color-sea-050);
   }
 }
 
 @container style(--theme: sumi) {
   .level-900 {
+    color: var(--color-sumi-100);
     background: var(--color-sumi-900);
   }
   .level-800 {
+    color: var(--color-sumi-100);
     background: var(--color-sumi-800);
   }
   .level-700 {
+    color: var(--color-sumi-100);
     background: var(--color-sumi-700);
   }
   .level-600 {
+    color: var(--color-sumi-100);
     background: var(--color-sumi-600);
   }
   .level-500 {
+    color: var(--color-sumi-900);
     background: var(--color-sumi-500);
   }
   .level-400 {
+    color: var(--color-sumi-900);
     background: var(--color-sumi-400);
   }
   .level-300 {
+    color: var(--color-sumi-900);
     background: var(--color-sumi-300);
   }
   .level-200 {
+    color: var(--color-sumi-900);
     background: var(--color-sumi-200);
   }
-  .level-100  {
+  .level-100 {
+    color: var(--color-sumi-900);
     background: var(--color-sumi-100);
   }
-  .level-050  {
+  .level-050 {
+    color: var(--color-sumi-900);
     background: var(--color-sumi-050);
   }
 }
 
 @container style(--theme: forest) {
   .level-900 {
+    color: var(--color-sumi-100);
     background: var(--color-forest-900);
   }
   .level-800 {
+    color: var(--color-sumi-100);
     background: var(--color-forest-800);
   }
   .level-700 {
+    color: var(--color-sumi-900);
     background: var(--color-forest-700);
   }
   .level-600 {
+    color: var(--color-sumi-900);
     background: var(--color-forest-600);
   }
   .level-500 {
+    color: var(--color-sumi-900);
     background: var(--color-forest-500);
   }
   .level-400 {
+    color: var(--color-sumi-900);
     background: var(--color-forest-400);
   }
   .level-300 {
+    color: var(--color-sumi-900);
     background: var(--color-forest-300);
   }
   .level-200 {
+    color: var(--color-sumi-900);
     background: var(--color-forest-200);
   }
   .level-100  {
+    color: var(--color-sumi-900);
     background: var(--color-forest-100);
   }
   .level-050  {
+    color: var(--color-sumi-900);
     background: var(--color-forest-050);
   }
 }
 
 @container style(--theme: wood) {
   .level-900 {
+    color: var(--color-sumi-100);
     background: var(--color-wood-900);
   }
   .level-800 {
+    color: var(--color-sumi-900);
     background: var(--color-wood-800);
   }
   .level-700 {
+    color: var(--color-sumi-900);
     background: var(--color-wood-700);
   }
   .level-600 {
+    color: var(--color-sumi-900);
     background: var(--color-wood-600);
   }
   .level-500 {
+    color: var(--color-sumi-900);
     background: var(--color-wood-500);
   }
   .level-400 {
+    color: var(--color-sumi-900);
     background: var(--color-wood-400);
   }
   .level-300 {
+    color: var(--color-sumi-900);
     background: var(--color-wood-300);
   }
   .level-200 {
+    color: var(--color-sumi-900);
     background: var(--color-wood-200);
   }
   .level-100  {
+    color: var(--color-sumi-900);
     background: var(--color-wood-100);
   }
   .level-050  {
+    color: var(--color-sumi-900);
     background: var(--color-wood-050);
   }
 }
 
 @container style(--theme: sun) {
   .level-900 {
+    color: var(--color-sumi-100);
     background: var(--color-sun-900);
   }
   .level-800 {
+    color: var(--color-sumi-900);
     background: var(--color-sun-800);
   }
   .level-700 {
+    color: var(--color-sumi-900);
     background: var(--color-sun-700);
   }
   .level-600 {
+    color: var(--color-sumi-900);
     background: var(--color-sun-600);
   }
   .level-500 {
+    color: var(--color-sumi-900);
     background: var(--color-sun-500);
   }
   .level-400 {
+    color: var(--color-sumi-900);
     background: var(--color-sun-400);
   }
   .level-300 {
+    color: var(--color-sumi-900);
     background: var(--color-sun-300);
   }
   .level-200 {
+    color: var(--color-sumi-900);
     background: var(--color-sun-200);
   }
   .level-100  {
+    color: var(--color-sumi-900);
     background: var(--color-sun-100);
   }
   .level-050  {
+    color: var(--color-sumi-900);
     background: var(--color-sun-050);
+  }
+}
+
+.card-wrapper {
+  width: 100%;
+  display: flex;
+  margin-block-start: var(--spacing-24);
+}
+.card-item {
+  width: 50%;
+}
+.card-item-inner {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding: var(--spacing-16);
+}
+.card-thambnail-wrapper {
+  width: 100%;
+}
+.card-thambnail-image {
+  width: 100%;
+}
+.card-textarea {
+  padding: var(--spacing-16);
+}
+.card-text {
+  line-height: 1.65;
+}
+@container style(--theme: sea) {
+  .card-item {
+    background: var(--color-sea-100);
+  }
+  .card-textarea {
+    background: var(--color-sea-050);
+  }
+  @media (hover: hover) {
+    .card-item:hover {
+      background: var(--color-sea-200);
+    }
+  }
+}
+@container style(--theme: sumi) {
+  .card-item {
+    background: var(--color-sumi-100);
+  }
+  .card-textarea {
+    background: var(--color-sumi-050);
+  }
+  @media (hover: hover) {
+    .card-item:hover {
+      background: var(--color-sumi-200);
+    }
+  }
+}
+@container style(--theme: forest) {
+  .card-item {
+    background: var(--color-forest-100);
+  }
+  .card-textarea {
+    background: var(--color-forest-050);
+  }
+  @media (hover: hover) {
+    .card-item:hover {
+      background: var(--color-forest-200);
+    }
+  }
+}
+@container style(--theme: wood) {
+  .card-item {
+    background: var(--color-wood-100);
+  }
+  .card-textarea {
+    background: var(--color-wood-050);
+  }
+  @media (hover: hover) {
+    .card-item:hover {
+      background: var(--color-wood-200);
+    }
+  }
+}
+@container style(--theme: sun) {
+  .card-item {
+    background: var(--color-sun-100);
+  }
+  .card-textarea {
+    background: var(--color-sun-050);
+  }
+  @media (hover: hover) {
+    .card-item:hover {
+      background: var(--color-sun-200);
+    }
   }
 }
