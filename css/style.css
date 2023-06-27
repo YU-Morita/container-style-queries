@@ -156,12 +156,15 @@ body {
   color: var(--color-sumi-800);
 }
 .dark {
+  .theme-picker-inner {
+    background: var(--color-white-900);
+  }
   & .theme-picker-title {
     color: var(--color-white-900);
   }
   @container style(--theme: sea) {
     & .theme-picker-inner {
-      border-color: var(--color-sea-900);
+      border-color: var(--color-sea-300);
     }
     & .theme-picker-title {
       background: var(--color-sea-900);
@@ -169,7 +172,7 @@ body {
   }
   @container style(--theme: sumi) {
     & .theme-picker-inner {
-      border-color: var(--color-sumi-900);
+      border-color: var(--color-sumi-300);
     }
     & .theme-picker-title {
       background: var(--color-sumi-900);
@@ -177,7 +180,7 @@ body {
   }
   @container style(--theme: forest) {
     & .theme-picker-inner {
-      border-color: var(--color-forest-900);
+      border-color: var(--color-forest-300);
     }
     & .theme-picker-title {
       background: var(--color-forest-900);
@@ -185,7 +188,7 @@ body {
   }
   @container style(--theme: wood) {
     & .theme-picker-inner {
-      border-color: var(--color-wood-900);
+      border-color: var(--color-wood-300);
     }
     & .theme-picker-title {
       background: var(--color-wood-900);
@@ -193,7 +196,7 @@ body {
   }
   @container style(--theme: sun) {
     & .theme-picker-inner {
-      border-color: var(--color-sun-900);
+      border-color: var(--color-sun-300);
     }
     & .theme-picker-title {
       background: var(--color-sun-900);
@@ -495,6 +498,7 @@ body {
   width: 50%;
 }
 .card-item-inner {
+  color: var(--color-sumi-900);
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -507,6 +511,7 @@ body {
   width: 100%;
 }
 .card-textarea {
+  color: var(--color-sea-900);
   padding: var(--spacing-16);
 }
 .card-text {
