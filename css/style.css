@@ -160,26 +160,41 @@ body {
     color: var(--color-white-900);
   }
   @container style(--theme: sea) {
+    & .theme-picker-inner {
+      border-color: var(--color-sea-900);
+    }
     & .theme-picker-title {
       background: var(--color-sea-900);
     }
   }
   @container style(--theme: sumi) {
+    & .theme-picker-inner {
+      border-color: var(--color-sumi-900);
+    }
     & .theme-picker-title {
       background: var(--color-sumi-900);
     }
   }
   @container style(--theme: forest) {
+    & .theme-picker-inner {
+      border-color: var(--color-forest-900);
+    }
     & .theme-picker-title {
       background: var(--color-forest-900);
     }
   }
   @container style(--theme: wood) {
+    & .theme-picker-inner {
+      border-color: var(--color-wood-900);
+    }
     & .theme-picker-title {
       background: var(--color-wood-900);
     }
   }
   @container style(--theme: sun) {
+    & .theme-picker-inner {
+      border-color: var(--color-sun-900);
+    }
     & .theme-picker-title {
       background: var(--color-sun-900);
     }
@@ -219,6 +234,21 @@ body {
 }
 
 @media (hover: hover) {
+  .theme-picker-label[for="sea"]:hover {
+    color: var(--color-sea-800);
+  }
+  .theme-picker-label[for="sumi"]:hover {
+    color: var(--color-sumi-800);
+  }
+  .theme-picker-label[for="forest"]:hover {
+    color: var(--color-forest-800);
+  }
+  .theme-picker-label[for="wood"]:hover {
+    color: var(--color-wood-800);
+  }
+  .theme-picker-label[for="sun"]:hover {
+    color: var(--color-sun-800);
+  }
   .theme-picker-button:hover {
     /* 今まさに押せる状態になったとわかる見た目にする */
   }
